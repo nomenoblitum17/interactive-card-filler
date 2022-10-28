@@ -2,50 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <title>Frontend Mentor | Interactive card details form</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
-
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
-
-  000
-
-  Cardholder Name
-  e.g. Jane Appleseed
-
-  Card Number
-  e.g. 1234 5678 9123 0000
-
-  Exp. Date (MM/YY)
-  MM
-  YY
-
-  CVC
-  e.g. 123
-
-  Confirm
-
-  <!-- Completed state start -->
-
-  Thank you!
-  We've added your card details
-  Continue
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+<div class="container">
+   <div class="cards-container">
+      <div class="card-front">
+         <div style="position: relative; height: fit-content;"><img class="bg-img" src="images/bg-card-front.png">
+            <div class="card-data">
+               <img src="images/card-logo.svg">
+               <div class="card-data-1">
+                  <div id="card-number-1">0000 0000 0000 0000</div>
+                  <div id="card-user-1">Jane Appleseed</div>
+                  <div class="card-exp-date-1"><p id="month-1">00</p>&nbsp/&nbsp<p id="year-1">00</p></div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="card-back">
+         <div style="position: relative; height: fit-content;"><img class="bg-img" src="images/bg-card-back.png"><div id="cvc">000</div></div>
+      </div>
+   </div>
+   <div class="form-container">
+      <form id="form">
+         <label for="cardholder-name">Cardholder Name</label>
+         <input type="text" maxlength="20" autocomplete="off" spellcheck="false" name="cardholder-name" id="cardholder-name" placeholder=" e.g. Jane Appleseed">
+         <p class="error cardholder-error">&nbsp</p>
+         <label for="card-number">Card Number</label>
+         <input type="text" autocomplete="off" spellcheck="false" name="Card-Number" id="card-number" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
+         <p class="error card-number-error">&nbsp</p>
+         <div class="date-cvc-container">
+            <div class="date-container">
+               <label for="month" style="white-space: nowrap;">Exp. Date (MM/YY)</label>
+               <input type="text" maxlength="2" autocomplete="off" spellcheck="false" name="month" id="month" placeholder="MM"><input type="text" maxlength="2" autocomplete="off" spellcheck="false" name="year" id="year" placeholder="YY">
+               <p class="error month-year-error" style="width: 100%; white-space: nowrap;">&nbsp</p>
+            </div>
+            <div class="cvc-container">
+               <label for="cvc-value">CVC</label>
+               <input maxlength="3" autocomplete="off" spellcheck="false" name="cvc" id="cvc-value" placeholder="e.g. 123">
+               <p class="error cvc-error">&nbsp</p>
+            </div>
+         </div>
+         <button id="confirm">Confirm</button>
+      </form>
+   </div>
+</div>
+<script src="code.js"></script>
 </body>
 </html>
